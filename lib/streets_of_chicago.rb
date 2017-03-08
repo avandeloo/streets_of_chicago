@@ -16,7 +16,7 @@ module StreetsOfChicago
     end
 
     def self.all
-      streets_array = Unirest.get("https://data.cityofchicago.org/resource/pasq-g8mx.json")
+      streets_array = Unirest.get("https://data.cityofchicago.org/resource/pasq-g8mx.json").body
       convert_hashes_to_objects(streets_array)
     end
     
@@ -28,10 +28,10 @@ module StreetsOfChicago
 
     private
 
-    def self.convert_hashes_to_objects(arrary_of_hashes)
+    def self.convert_hashes_to_objects(array_of_hashes)
       streets = []
 
-      arrary_of_hashes.each do |street_hash|
+      array_of_hashes.each do |street_hash|
         streets << Street.new(street_hash)
       end
 

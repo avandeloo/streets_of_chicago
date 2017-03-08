@@ -38,7 +38,7 @@ streets = StreetsOfChicago::Street.all
 To search through the streets and their information for a particular term, use the following example code:
 
 ```ruby
-west_streets = StreetsOfChicago::Street.search("W")
+mccormick_streets = StreetsOfChicago::Street.search("mccormick")
 ```
 
 ## Development
